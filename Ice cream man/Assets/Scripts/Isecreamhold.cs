@@ -23,12 +23,12 @@ public class Isecreamhold : MonoBehaviour
             if (!hold)
             {
                 Physics2D.queriesStartInColliders = false;
-                if (Input.GetAxis("Horizontal") > 0)
+                if (Input.GetAxis("Horizontal") >= 0)
                 {
                     hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance);
                 }
                 
-                if (Input.GetAxis("Horizontal") < 0)
+                if (Input.GetAxis("Horizontal") <= 0)
                 {
                     hit = Physics2D.Raycast(transform.position, Vector2.left * transform.localScale.x, distance);
                 }
