@@ -22,7 +22,8 @@ public class Isecreamhold : MonoBehaviour
         {
             if (!hold)
             {
-                Physics2D.queriesStartInColliders = false;
+                Physics2D.queriesStartInColliders = false; //Игнорирование коллайдера перса
+
                 if (Input.GetAxis("Horizontal") >= 0)
                 {
                     hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance);
@@ -63,6 +64,8 @@ public class Isecreamhold : MonoBehaviour
             hit.collider.gameObject.transform.position = holdPoint.position;
         }
 
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * 5;
+        Debug.DrawRay(transform.position, forward, Color.green);
     }
 
     private void OnDrawGizmos()
